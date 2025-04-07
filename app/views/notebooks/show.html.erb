@@ -1,0 +1,13 @@
+<div class="containter mt-4">
+<h1> <%= @page.emoji %> <%= @page.title %></h1>
+<p class="text-muted">Notebook: <%= link_to @notebook.name, notebook_path(@notebook) %></p>
+
+<div class="mt-3">
+<p><%= simple_format(@page.body) %></p>
+</div>
+
+<hr>
+<%= link_to "Edit", edit_notebook_page_path(@notebook, @page), class: "btn btn-warning" %>
+<%= link_to "Delete", notebook_page_path(@notebook, @page), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+<%= link_to "Back to the notebook", notebook_path(@notebook), class: "btn btn-secondary m5" %>
+</div>

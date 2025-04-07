@@ -1,0 +1,21 @@
+<%= form_with(model: [@notebook, @page], local: true) do |form| %>
+    <div class="mb-3">
+      <%= form.label :title, "Título", class: "form-label" %>
+      <%= form.text_field :title, class: "form-control", required: true %>
+    </div>
+  
+    <div class="mb-3">
+      <%= form.label :body, "Contenido", class: "form-label" %>
+      <%= form.text_area :body, class: "form-control", rows: 6, required: true %>
+    </div>
+  
+    <div class="mb-3">
+      <%= form.label :emoji_category, "Categoría de Emoji", class: "form-label" %>
+      <%= form.select :emoji_category,
+          ["smileys-and-people", "animals-and-nature", "food-and-drink", "travel-and-places", "activities", "objects", "symbols", "flags"],
+          {}, class: "form-select", required: true %>
+    </div>
+  
+    <%= form.submit class: "btn btn-primary" %>
+  <% end %>
+  
