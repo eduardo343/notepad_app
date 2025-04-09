@@ -9,7 +9,8 @@ A title and content (body).
 Delete notebooks or pages with visual confirmation.
 Use a modern interface with Bootstrap
 Enjoy fast navigation thanks to Hotwire/Turbo.
-🛠️ Technologies used
+
+Technologies used
 Ruby 3.x
 Rails 8
 PostgreSQL
