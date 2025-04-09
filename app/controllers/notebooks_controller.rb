@@ -8,7 +8,6 @@ class NotebooksController < ApplicationController
 
   # GET /notebooks/:id
   def show
-    
     # Displays the notebook and its associated pages
   end
 
@@ -18,7 +17,12 @@ class NotebooksController < ApplicationController
   end
 
   # GET /notebooks/:id/edit
-  def edit; end
+  def edit
+    respond_to do |format|
+      format.html
+      format.json { render json: @notebook }
+  end
+end
 
   # POST /notebooks
   def create
@@ -34,7 +38,7 @@ class NotebooksController < ApplicationController
   # PATCH/PUT /notebooks/:id
   def update
     if @notebook.update(notebook_params)
-      redirect_to @notebook, notice: '✅ Notebook successfully updated.'
+      redirect_to @notebook, notice: ' Notebook successfully updated.'
     else
       flash.now[:alert] = 'Failed to update the notebook.'
       render :edit
@@ -43,14 +47,15 @@ class NotebooksController < ApplicationController
 
   # DELETE /notebooks/:id
   def destroy
-    @notebook = Notebook.find(params[:id])
+    
     @notebook.destroy
-    redirect_to notebooks_url, notice: '🗑️ Notebook successfully deleted.'
+    redirect_to notebooks_path, notice: "Notebook deleted."
   end
 
   private
 
   def set_notebook
+    
     @notebook = Notebook.find(params[:id])
   end
 

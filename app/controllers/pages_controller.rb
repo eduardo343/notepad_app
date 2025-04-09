@@ -18,9 +18,11 @@ class PagesController < ApplicationController
   end
 
   def edit
-
+    respond_to do |format|
+      format.html 
+      format.json { render json: @page } 
   end
-
+end
   def create
     @page = @notebook.pages.new(page_params)
     @page.emoji = fetch_random_emoji(@page.emoji_category)
@@ -43,8 +45,8 @@ class PagesController < ApplicationController
   end
 
   def destroy
-    @page.destroy
-  redirect_to notebook_path(@notebook), notice: "Page deleted successfully."
+  @page.destroy
+  redirect_to notebook_pages_path(@notebook), notice: "Page deleted successfully."
   end
 
   private
