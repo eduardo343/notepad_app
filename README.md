@@ -1,7 +1,7 @@
 📒 Ruby on Rails Notebook App
 This is a "notepad"-style web application built with Ruby on Rails 8, allowing users to create Notebooks and add Pages inside them, each with a title, content, and a random emoji.
 
-It's ideal for practicing modern Rails with Turbo, Tailwind CSS, and a PostgreSQL database.
+It's ideal for practicing modern Rails with Turbo, Bootstrap, and a PostgreSQL database.
 
 ✅ What can you do with this app?
 Create, view, edit, and delete Notebooks.
@@ -29,3 +29,5 @@ Node.js and Yarn (npm install -g yarn)
 Bundler (gem install bundler)
 ⚙️ How to install the project step by step
 Clone the repository:
+https://github.com/eduardo343/notepad_app.git
+cd notebook-app
